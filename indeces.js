@@ -1,0 +1,1 @@
+var index = ['III', 'ABF', 'ADN', 'ADM', 'AAL', 'ANTO', 'ARM', 'AHT', 'AZN', 'AV.', 'BAB', 'BA.', 'BARC', 'BDEV', 'BKG', 'BG.', 'BLT', 'BP.', 'BATS', 'BLND','BT.A', 'BNZL', 'BRBY', 'CPI', 'CCL' 'CNA' ,'CCH', 'CPG']
