@@ -1,6 +1,6 @@
 //lets require/import the mongodb native drivers.
 var mongodb = require('mongodb');
-var index = ['III', '3IN', 'ASL', 'AGS', 'AFR', 'ABG', 'ATST', 'AML', 'AIE', 'AQP', 'AHT', 'ATK', 'AVV', 'AVM', 'AZEM', 'BBY', 'BGEO', 'BNKR', 'BAG', 'BDEV', 'BBA', 'BEZ', 'BWY', 'BRSN', 'BKG', 'BET', 'BHGG', 'BHGU', 'BHME', 'BHMG', 'BHMU', 'BYG', 'BRWM', 'BABS', 'BOY', 'BOK', 'BVS', 'BRW', 'BSET', 'BTEM', 'BVIC', 'BWNG', 'BTG', 'BUMI', 'BPTY', 'CWC', 'CNE', 'CLDN', 'CIU', 'CAPC', 'CLLN', 'CPR', 'CGL', 'CEY', 'CHG', 'CTY', 'CBG', 'COB', 'COLT', 'CCC', 'CKSN', 'CWK', 'CSR', 'DJAN', 'DCG', 'DLAR', 'DEB', 'DPH', 'DLN', 'DVO', 'DAB', 'DIA', 'DTY', 'DPLM', 'DXNS', 'DNO', 'DOM', 'DRX', 'DNLM', 'EZJ', 'EFM', 'EDIN', 'ELTA', 'ECM', 'ELM', 'ENQ', 'ESSR', 'ERM', 'FCAM', 'FCPT', 'FENR', 'FXPO', 'FCSS', 'FEV', 'FDSA', 'FLTR', 'FGP', 'FRCL', 'GFRD', 'GEMD', 'GSS', 'GNS', 'GOG', 'GRI', 'GPOR', 'GNK', 'GRG', 'HFD', 'HLMA', 'HSTN', 'HAS', 'HGG', 'HRI', 'HOIL', 'HICL', 'HIK', 'HSX', 'HOC', 'HOME', 'HSV', 'HWDN', 'HTG', 'IGG', 'IMG', 'INCH', 'INF', 'ISAT', 'ICP', 'IPF', 'INPP', 'IRV', 'ISYS', 'INVP', 'IPO', 'ITE', 'JLT', 'JD', 'JLIF', 'JAM', 'JAI', 'JMG', 'JII', 'JUP', 'KCOM', 'KMR', 'KENZ', 'KIE', 'LAD', 'LRD', 'LRE', 'LWDB', 'LOG', 'LSP', 'LSE', 'LMI', 'EMG', 'MARS', 'MRO', 'MNZS', 'MRC', 'MRCH', 'MPI', 'MCRO', 'MLC', 'MAB', 'MTO', 'MNDI', 'MONY', 'MNKS', 'MGCR', 'MUT', 'MYI', 'NEX', 'NBLS', 'NWR', 'NMC', 'OCDO', 'OPHR', 'OXIG', 'PAG', 'PAY', 'PER', 'PLI', 'PSN', 'PNL', 'PDL', 'POG', 'PHNX', 'PCT', 'PFL', 'PMO', 'PFG', 'PZC', 'QQ', 'RNK', 'RAT', 'RUS', 'RDW', 'RGU', 'RSW', 'RTO', 'RTN', 'RMV', 'RCP', 'ROR', 'RPC', 'RPS', 'RPO', 'SMDR', 'SVS', 'SCIN', 'SMT', 'SDL', 'SGRO', 'SNR', 'SHB', 'SKS', 'SHI', 'SMDS', 'SIA', 'SXS', 'SPX', 'SPT', 'SPD', 'STJ', 'SGC', 'STOB', 'SVI', 'SYR', 'TALK', 'TALV', 'TW', 'TED', 'TCY', 'TEP', 'TMPL', 'TEM', 'TRY', 'TRYS', 'TPK', 'TT', 'TLPR', 'UBM', 'UKCM', 'ULE', 'UEM', 'VCT', 'JDW', 'SMWH', 'WMH', 'WTAN', 'WG', 'WWH', 'YULC']
+var index = ['III', 'ABF', 'ADN', 'ADM', 'AAL', 'ANTO', 'ARM', 'AHT', 'AZN', 'AV/', 'BAB', 'BA/', 'BARC', 'BDEV', 'BKG', 'BG/', 'BLT', 'BP/', 'BATS', 'BLND','BT/A', 'BNZL', 'BRBY', 'CPI', 'CCL', 'CNA' ,'CCH', 'CPG', 'CRH', 'DGE', 'DLG', 'DC/', 'EZJ', 'EXPN', 'FRES', 'GFS', 'GKN', 'GSK', 'GLEN', 'HMSO', 'HL/', 'HIK', 'HSBA', 'IMT', 'ISAT', 'IHG', 'ITRK', 'IAG', 'INTU', 'ITV', 'JMAT', 'KGF', 'LAND', 'LGEN', 'LLOY', 'LSE', 'MKS', 'MGGT', 'MERL', 'MNDI', 'MRW', 'NG/', 'NXT', 'OML', 'PSON', 'PSN', 'PRU', 'RRS', 'RDSA', 'RDSB', 'RB/', 'REL', 'RIO', 'RR/', 'RBS','RMG','RSA','SAB','SGE','SBRY','SDR','SVT','SHP','SKY','SN/','SMIN','SPD','SSE','STJ','STAN','SL','TW/', 'TSCO', 'TPK', 'TUI', 'ULVR', 'UU/', 'VOD', 'WTB', 'WOS', 'WPP'];
 //We need to work with "MongoClient" interface in order to connect to a mongodb server.
 var MongoClient = mongodb.MongoClient;
 
@@ -21,7 +21,7 @@ aws.config.update({
 });
 var awsdb = new aws.DynamoDB.DocumentClient();
 
-for (i = 0; i < 230; i++) {
+for (i = 0; i < 87; i++) {
 
       //Create some users
 
@@ -58,8 +58,7 @@ setTimeout(function() {
 
   for(var i = 1; i < 180; i++) {
 
-setTimeout(function() {
-    for(var j = 0; j < 230; j++) {
+    for(var j = 0; j < 87; j++) {
       if(things[j]) {
         if(things[j][i]) {
           if(things[j][i].High > things[j][i-1].High) {
@@ -76,8 +75,6 @@ setTimeout(function() {
 
 
     }
-
-},250);
 
   }
 }, 2000);
