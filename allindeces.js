@@ -71,34 +71,37 @@ setTimeout(function() {
         }
       } else {
         led.presetPixel(j, 0, 0, 255);
+        console.log('err: ' + things[j]);
       }
-      if(i>0){
 
-      }else if(i>25){
-        led.presetPixel(Math.floor(240-(i/2)), 255,69,0);
-      }else if(i>50){
-        led.presetPixel(Math.floor(240-(i/2)), 139,69,139);
-      }else if(i>75){
-        led.presetPixel(Math.floor(240-(i/2)), 255,69,0);
-      }else if(i>100){
-        led.presetPixel(Math.floor(240-(i/2)), 139,69,139);
-      }else if(i>125){
-        led.presetPixel(Math.floor(240-(i/2)), 255,69,0);
-      }else if(i>150){
-        led.presetPixel(Math.floor(240-(i/2)), 139,69,139);
-      }else if(i>175){
-        led.presetPixel(Math.floor(240-(i/2)), 255,69,0);
-      }else if(i>200){
-        led.presetPixel(Math.floor(240-(i/2)), 139,69,139);
-      }else if(i>225){
-        led.presetPixel(Math.floor(240-(i/2)), 255,69,0);
-      }else if(i>250){
-        led.presetPixel(Math.floor(240-(i/2)), 139,69,139);
-      }else if(i>275){
-        led.presetPixel(Math.floor(240-(i/2)), 255,69,0);
-      }
-      
 
+
+    }
+
+    if(i>275){
+      led.presetPixel(Math.floor(240-(i/2)), 139,69,139);
+    }else if(i>250){
+      led.presetPixel(Math.floor(240-(i/2)), 255,69,0);
+    }else if(i>225){
+      led.presetPixel(Math.floor(240-(i/2)), 139,69,139);
+    }else if(i>200){
+      led.presetPixel(Math.floor(240-(i/2)), 255,69,0);
+    }else if(i>175){
+      led.presetPixel(Math.floor(240-(i/2)), 139,69,139);
+    }else if(i>150){
+      led.presetPixel(Math.floor(240-(i/2)), 255,69,0);
+    }else if(i>125){
+      led.presetPixel(Math.floor(240-(i/2)), 139,69,139);
+    }else if(i>100){
+      led.presetPixel(Math.floor(240-(i/2)), 255,69,0);
+    }else if(i>75){
+      led.presetPixel(Math.floor(240-(i/2)), 139,69,139);
+    }else if(i>50){
+      led.presetPixel(Math.floor(240-(i/2)), 255,69,0);
+    }else if(i>25){
+      led.presetPixel(Math.floor(240-(i/2)), 139,69,139);
+    }else if(i>0){
+      led.presetPixel(Math.floor(240-(i/2)), 255,69,0);
     }
 
     led.updateStrip();

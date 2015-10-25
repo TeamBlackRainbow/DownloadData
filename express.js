@@ -31,7 +31,7 @@ for (i = 0; i < 87; i++) {
       //Create some users
 
   var params = {
-      TableName: '2013',
+      TableName: '2008',
       KeyConditionExpression: '#t = :ticker and #d between :date1 and :date2',
       ExpressionAttributeNames: {
     '#t': 'Ticker',
@@ -39,8 +39,8 @@ for (i = 0; i < 87; i++) {
       },
       ExpressionAttributeValues: {
     ':ticker': index[i]+' LN Equity',
-    ':date1': '2013-01-01',
-    ':date2': '2013-12-02'
+    ':date1': '2008-01-01',
+    ':date2': '2008-12-02'
       }
   };
 
