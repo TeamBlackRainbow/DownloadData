@@ -35,7 +35,7 @@ for (i = 0; i < 87; i++) {
       ExpressionAttributeValues: {
     ':ticker': index[i]+' LN Equity',
     ':date1': '2013-01-01',
-    ':date2': '2013-06-02'
+    ':date2': '2013-12-02'
       }
   };
 
@@ -56,25 +56,27 @@ for (i = 0; i < 87; i++) {
 setTimeout(function() {
   console.log(things.length);
 
-  for(var i = 1; i < 180; i++) {
+  for(var i = 1; i < 300; i++) {
 
     for(var j = 0; j < 87; j++) {
       if(things[j]) {
         if(things[j][i]) {
           if(things[j][i].High > things[j][i-1].High) {
-            led.setPixel(j, 0, 255, 0);
+            led.presetPixel(j, 0, 255, 0);
           } else {
-            led.setPixel(j, 255, 0, 0);
+            led.presetPixel(j, 255, 0, 0);
           }
         } else {
-          led.setPixel(j, 0, 0, 255);
+          led.presetPixel(j, 0, 0, 255);
         }
       } else {
-        led.setPixel(j, 0, 0, 255);
+        led.presetPixel(j, 0, 0, 255);
       }
 
 
     }
+
+    led.updateStrip();
 
   }
 }, 2000);
