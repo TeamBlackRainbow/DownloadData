@@ -73,6 +73,7 @@ setTimeout(function() {
         led.presetPixel(j, 0, 0, 255);
       }
 
+      led.presetPixel(Math.floor(270-(i/2)), 0,255,255)
 
     }
 
