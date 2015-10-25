@@ -1,7 +1,6 @@
 //lets require/import the mongodb native drivers.
 var mongodb = require('mongodb');
-var index = ['III', 'ABF', 'ADN', 'ADM', 'AAL', 'ANTO', 'ARM', 'AHT', 'AZN', 'AV/', 'BAB', 'BA/', 'BARC', 'BDEV', 'BKG', 'BG/', 'BLT', 'BP/', 'BATS', 'BLND','BT/A', 'BNZL', 'BRBY', 'CPI', 'CCL', 'CNA' ,'CCH', 'CPG', 'DGE', 'DLG', 'DC/', 'EZJ', 'EXPN', 'FRES', 'GFS', 'GKN', 'GSK', 'GLEN', 'HMSO', 'HL/', 'HIK', 'HSBA', 'IMT', 'ISAT', 'IHG', 'ITRK', 'IAG', 'INTU', 'ITV', 'JMAT', 'KGF', 'LAND', 'LGEN', 'LLOY', 'LSE']
-var index2 = [ 'MNDI', 'MRW', 'NXT', 'OML', 'PSON', 'PSN', 'RRS', 'REL', 'RIO', 'RBS','RSA','SDR','SVT','SHP','SKY','SN/','SMIN','SPD','SSE','STJ','STAN', 'TSCO', 'TPK', 'TUI', 'ULVR', 'UU/', 'VOD', 'WOS', 'WPP']
+var index = ['III', 'ABF', 'ADN', 'ADM', 'AAL', 'ANTO', 'ARM', 'AHT', 'AZN', 'AV/', 'BAB', 'BA/', 'BARC', 'BDEV', 'BKG', 'BG/', 'BLT', 'BP/', 'BATS', 'BLND','BT/A', 'BNZL', 'BRBY', 'CPI', 'CCL', 'CNA' ,'CCH', 'CPG', 'DGE', 'DLG', 'DC/', 'EZJ', 'EXPN', 'FRES', 'GFS', 'GKN', 'GSK', 'GLEN', 'HMSO', 'HL/', 'HIK', 'HSBA', 'IMT', 'ISAT', 'IHG', 'ITRK', 'IAG', 'INTU', 'ITV', 'JMAT', 'KGF', 'LAND', 'LGEN', 'LLOY', 'LSE', 'MNDI', 'MRW', 'NXT', 'OML', 'PSON', 'PSN', 'RRS', 'REL', 'RIO', 'RBS','RSA','SDR','SVT','SHP','SKY','SN/','SMIN','SPD','SSE','STJ','STAN', 'TSCO', 'TPK', 'TUI', 'ULVR', 'UU/', 'VOD', 'WOS', 'WPP']
 //We need to work with "MongoClient" interface in order to connect to a mongodb server.
 var MongoClient = mongodb.MongoClient;
 
@@ -22,7 +21,7 @@ aws.config.update({
 });
 var awsdb = new aws.DynamoDB.DocumentClient();
 
-for (i = 0; i < 30; i++) {
+for (i = 0; i < 90; i++) {
 
       //Create some users
 
@@ -34,7 +33,7 @@ for (i = 0; i < 30; i++) {
     '#d': 'Date'
       },
       ExpressionAttributeValues: {
-    ':ticker': index2[i]+' LN Equity',
+    ':ticker': index[i]+' LN Equity',
     ':date1': '2013-01-01',
     ':date2': '2013-06-02'
       }
@@ -55,12 +54,12 @@ for (i = 0; i < 30; i++) {
 }
 
 setTimeout(function() {
-  console.log(things);
+  console.log(things.length);
 
   for(var i = 1; i < 180; i++) {
 
 
-    for(var j = 0; j < 60; j++) {
+    for(var j = 0; j < 90; j++) {
       if(things[j]) {
         if(things[j][i]) {
           if(things[j][i].High > things[j][i-1].High) {
